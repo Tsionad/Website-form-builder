@@ -1,0 +1,46 @@
+
+
+.card{
+  margin: auto;
+  width: 80%;
+  padding: 20px;
+  border: 4px;
+  border-radius: 4px solid;
+}
+
+.application-label {
+  padding: 0px 0px 0px
+}
+
+label {
+display: block;
+}
+
+
+label, input, textarea {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 20px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.alert {
+  color: rgb(248, 0, 0);
+  font-size: 12px;
+}
+
+.visuallyhidden {
+border: 0;
+clip: rect(0 0 0 0);
+height: 1px;
+width: 1px;
+margin: -1px;
+padding: 0;
+overflow: hidden;
+position: absolute !important;
+}
+
+
+

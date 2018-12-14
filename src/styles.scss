@@ -32,8 +32,10 @@ a {
 
 
 section {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
-  padding: 2em;
+  padding: 15px 15px;
+  border-bottom: 1px;
+  position: relative;
+  overflow: auto;
 }
-
