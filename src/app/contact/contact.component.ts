@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // form-specific functions
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-//email service
+// email service
 import { MessageService } from '../message.service';
 
 
@@ -45,10 +45,10 @@ export class ContactComponent implements OnInit {
           alert("Thank you! Your message was sent");
         },
         (err) =>{
-          alert("Sorry, there was an error submitting your message, please try again");
+          alert("Sorry, there was an error submitting your message, please try again");       
         }
-      );
-    }
+      ); 
+     }
 
   }
 }

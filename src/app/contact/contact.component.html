@@ -17,7 +17,7 @@
                   <span class="required">*</span> 
                        Email
                 </div>
-                <input id="email" class="form-control" type="email" placeholder="Your Email" [formControl]="contactForm.controls['email']">
+                <input id="email" class="form-control" type="email" placeholder="Email address" [formControl]="contactForm.controls['email']">
                 <div class="error-alert" *ngIf="contactForm.controls['email'].hasError('required') && submitted" class="alert alert-danger">You must include an email address.</div>
                   <div class="error-alert" *ngIf="contactForm.controls['email'].hasError('email') && submitted" class="alert alert-danger">Your email address must be valid.</div>
               </label>
@@ -25,12 +25,12 @@
                
             <!-- subject -->
             <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['subject'].valid && submitted}">
-              <label for="subject">
+              <label for="Subject">
                 <div class="application-label">
                   <span class="required">*</span> 
                     Subject
                 </div>
-                <input id="subject" class="form-control" placeholder="subject" type="text" [formControl]="contactForm.controls['subject']">
+                <input id="subject" class="form-control" placeholder="Subject" type="text" [formControl]="contactForm.controls['subject']">
                 <div class="error-alert" *ngIf="contactForm.controls['subject'].hasError('required') && submitted" class="alert alert-danger">You must include a subject.</div>
               </label>
             </div>
@@ -47,7 +47,7 @@
               </label>
             </div>
 
-               <button type="submit" class="button is-danger is-large">Submit</button>
+               <button (click)="onSubmit()" type="submit" class="button is-danger is-large">Submit</button>
           </form>
       </div>
   </div>

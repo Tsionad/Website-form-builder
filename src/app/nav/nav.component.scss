@@ -1,14 +1,17 @@
 header {
-  background: rgba(255, 72, 0, 0.849);
-  
+  background:#232a34;
+  border-style: round;
+  padding:0.01em;
 
   .logo {
       font-weight: bold;
-  }
+      font-size: 1.5em;
+      color: rgb(221, 208, 208);
+
+    }
 
   nav {
     justify-content: right;
-
 
     ul {
       list-style-type: none;
@@ -18,10 +21,10 @@ header {
         float: left;
 
         a {
-            color: rgba(255, 255, 255, 0.945);
+            color: rgb(221, 208, 208);
             padding: 1.5em;
             text-transform: uppercase;
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
       }
     }
