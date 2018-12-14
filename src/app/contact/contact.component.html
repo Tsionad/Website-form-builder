@@ -1,0 +1,54 @@
+
+  <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Contact us</h4>
+          <h6 class="card-subtitle mb-2 text-muted">All fields marked with <span aria-hidden="true" class="required">*</span><span class="visuallyhidden"></span> are required.</h6>
+          
+          <div class="error-alert"  *ngIf="!contactForm.valid && submitted"> 
+            <div class="panel-heading">
+                <h6 id="error-heading" class="panel-title" tabindex="-1"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Oooh hang on, it looks like we missed something</h6>
+            </div>
+          </div>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+                <!-- email -->
+            <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['email'].valid && submitted}">
+              <label for="email">
+                <div class="application-label">
+                  <span class="required">*</span> 
+                       Email
+                </div>
+                <input id="email" class="form-control" type="email" placeholder="Email address" [formControl]="contactForm.controls['email']">
+                <div class="error-alert" *ngIf="contactForm.controls['email'].hasError('required') && submitted" class="alert alert-danger">You must include an email address.</div>
+                  <div class="error-alert" *ngIf="contactForm.controls['email'].hasError('email') && submitted" class="alert alert-danger">Your email address must be valid.</div>
+              </label>
+            </div>
+               
+            <!-- subject -->
+            <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['subject'].valid && submitted}">
+              <label for="Subject">
+                <div class="application-label">
+                  <span class="required">*</span> 
+                    Subject
+                </div>
+                <input id="subject" class="form-control" placeholder="Subject" type="text" [formControl]="contactForm.controls['subject']">
+                <div class="error-alert" *ngIf="contactForm.controls['subject'].hasError('required') && submitted" class="alert alert-danger">You must include a subject.</div>
+              </label>
+            </div>
+
+            <!-- message -->
+            <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && submitted}">
+              <label for="message">
+                <div class="application-label">
+                <span aria-hidden="true" class="required">*</span> 
+                    Message 
+                </div>
+                <textarea id="message" class="form-control form-control-lg" placeholder="What's on your mind?" [formControl]="contactForm.controls['message']"></textarea>
+                <div class="error-alert" *ngIf="contactForm.controls['message'].hasError('required') && submitted" class="alert alert-danger">You must include a message.</div>
+              </label>
+            </div>
+
+               <button (click)="onSubmit()" type="submit" class="button is-danger is-large">Submit</button>
+          </form>
+      </div>
+  </div>
+     
