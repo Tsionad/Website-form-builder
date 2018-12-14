@@ -3,6 +3,12 @@
       <div class="card-body">
           <h4 class="card-title">Contact us</h4>
           <h6 class="card-subtitle mb-2 text-muted">All fields marked with <span aria-hidden="true" class="required">*</span><span class="visuallyhidden"></span> are required.</h6>
+          
+          <div class="error-alert"  *ngIf="!contactForm.valid && submitted"> 
+            <div class="panel-heading">
+                <h6 id="error-heading" class="panel-title" tabindex="-1"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Oooh hang on, it looks like we missed something</h6>
+            </div>
+          </div>
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
                 <!-- email -->
             <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['email'].valid && submitted}">
